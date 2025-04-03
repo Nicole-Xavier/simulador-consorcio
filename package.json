@@ -1,0 +1,23 @@
+{
+  "name": "consorcio",
+  "version": "1.0.0",
+  "description": "📌 Simulador de Consórcio\r 📖 Sobre\r Este projeto é um simulador de consórcio online, onde os usuários podem inserir o valor do crédito desejado e o prazo em meses para calcular a parcela estimada.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicole-Xavier/simulador-consorcio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicole-Xavier/simulador-consorcio/issues"
+  },
+  "homepage": "https://github.com/Nicole-Xavier/simulador-consorcio#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
