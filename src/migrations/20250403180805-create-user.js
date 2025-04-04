@@ -31,6 +31,24 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      endereco: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      dataNascimento: {
+        type: Sequelize.DATEONLY,
+        allowNull: true
+      },
+      tipoUsuario: {
+        type: Sequelize.ENUM('admin', 'cliente'),
+        allowNull: false,
+        defaultValue: 'cliente'
+      },
+      status: {
+        type: Sequelize.ENUM('ativo', 'inativo', 'suspenso'),
+        allowNull: false,
+        defaultValue: 'ativo'
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

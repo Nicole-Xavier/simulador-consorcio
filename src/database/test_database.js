@@ -7,7 +7,7 @@ async function testConnection() {
     } catch (err) {
         console.error('Erro na conexão:',err);
     } finally{
-        pool.end;
+        await pool.end();
     }
 }
 

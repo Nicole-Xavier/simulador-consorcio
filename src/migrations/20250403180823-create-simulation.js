@@ -2,33 +2,33 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Payments', {
+    await queryInterface.createTable('Simulations', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
-      simulationId: {
+      userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: 'Simulations',
+          model: "Users",
           key: 'id'
+        }
       },
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE'
-    },
-      valorPago: {
+      consortiumId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model:'Consortiums',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+      parcelaMensal: {
         type: Sequelize.DECIMAL(10,2),
-        allowNull: false
-      },
-      dataPagamento: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      status: {
-        type: Sequelize.ENUM('pending', 'paid','canceled'),
         allowNull: false
       },
       createdAt: {
@@ -44,6 +44,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Payments');
+    await queryInterface.dropTable('Simulations');
   }
 };
